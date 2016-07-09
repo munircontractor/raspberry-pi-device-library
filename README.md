@@ -1,4 +1,4 @@
-# raspberry-pi-device-library
+# RaspberryPi Device Control Library
 
 This is a Python 3 library for easily setting up devices connected to a Raspberry Pi.
 It contains objects and methods for DC motors with and without software PWM, servos and LEDs.
