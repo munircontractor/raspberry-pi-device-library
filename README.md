@@ -15,7 +15,7 @@ Currently, following objects are available:
 2. To use the objects, add the following lines at the top of your code:  
 <pre>
 import sys
-sys.path.append("</full/path/to/devices.py>")
-from devices import <Device>
+sys.path.append("\</full/path/to/devices.py\>")
+from devices import \<Device\>
 </pre>
 3. Use and enjoy
