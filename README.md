@@ -16,7 +16,7 @@ Currently, following objects are available:
 <pre>
 import sys
 sys.path.append("\</full/path/to/devices.py\>")
-from devices import \<Device\>
+from devices import cleanup, \<Device\>
 </pre>
 3. Use and enjoy
 4. Do not forget to run the library's `cleanup` function or `RPi.GPIO.cleanup()` after you are done
