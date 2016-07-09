@@ -9,7 +9,7 @@ Currently, following objects are available:
 * `Servo`: Servo with PWM control and configuration methods
 * `LED`: LED, Laser Diode or any other device which can be controlled using a single GPIO output pin
 
-## Installation
+## Installation and Usage
 
 1. Copy the `.py` files to your Raspberry Pi
 2. To use the objects, add the following lines at the top of your code:  
