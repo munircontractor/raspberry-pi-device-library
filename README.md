@@ -19,3 +19,8 @@ sys.path.append("\</full/path/to/devices.py\>")
 from devices import \<Device\>
 </pre>
 3. Use and enjoy
+4. Do not forget to run the library's `cleanup` function or `RPi.GPIO.cleanup()` after you are done
+
+## Cautions
+
+Although all the classes in this library allow a different pin numbering mode during setup, it is strongly recommended to use the same mode across all devices. The pin numbering mode is set globally, so if devices are set with different pin numbering modes, code which is not calling a device method will automatically use the mode of the last device called, which can lead to undesirable and, at times, harmful to the Pi behavior.
