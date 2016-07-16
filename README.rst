@@ -47,11 +47,10 @@ Cautions
 
 1. Do not forget to run the library’s ``cleanup`` function or 
    ``RPi.GPIO.cleanup()`` after you are done.
-
 2. Although all the classes in this library allow a different pin numbering
-mode during setup, it is strongly recommended to use the same mode
-across all devices. The pin numbering mode is set globally, so if
-devices are set with different pin numbering modes, code which is not
-calling a device method will automatically use the mode of the last
-device called, which can lead to undesirable and, at times, harmful behavior.
+   mode during setup, it is strongly recommended to use the same mode
+   across all devices. The pin numbering mode is set globally, so if
+   devices are set with different pin numbering modes, code which is not
+   calling a device method will automatically use the mode of the last
+   device called, which can lead to undesirable and, at times, harmful behavior.
 
