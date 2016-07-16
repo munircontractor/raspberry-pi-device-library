@@ -17,19 +17,23 @@ Currently, following objects are available:
 Installation and Usage
 ----------------------
 
-Option 1:
-^^^^^^^^^
+Option 1 (Recommended) :
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using ``pip``: ::
+1. Using ``pip``: ::
 
-  pip install rpi_devices
+     pip install rpi_devices
 
-Then, in your code: ::
+   or using ``setuptools``: ::
 
-  from rpi_devices import <Device>
+     python3 setup.py install
 
-Option 2:
-^^^^^^^^^
+2. Then, in your code: ::
+
+     from rpi_devices import cleanup, <Device>
+
+Option 2 :
+^^^^^^^^^^
 
 Using directly:
 
@@ -39,8 +43,6 @@ Using directly:
      import sys
      sys.path.append("/full/path/to/devices.py")
      from devices import cleanup, <Device>-
-
-3. Use and enjoy.
 
 Cautions
 --------
