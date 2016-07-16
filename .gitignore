@@ -1,3 +1,5 @@
 build/
 dist/
 rpi_devices.egg-info/
+*.pyc
+rpi_devices/__pycache__/
