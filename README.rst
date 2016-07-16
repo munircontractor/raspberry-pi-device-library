@@ -36,9 +36,9 @@ Using directly:
 1. Copy the ``rpi_devices/devices.py`` files to your Raspberry Pi.
 2. To use the objects, add the following lines at the top of your code: ::
 
-   import sys
-   sys.path.append("/full/path/to/devices.py")
-   from devices import cleanup, <Device>-
+     import sys
+     sys.path.append("/full/path/to/devices.py")
+     from devices import cleanup, <Device>-
 
 3. Use and enjoy.
 
