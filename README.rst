@@ -22,11 +22,13 @@ Option 1 (Recommended) :
 
 1. Using ``pip``: ::
 
-     pip install rpi_devices
+     sudo pip install rpi_devices
 
    or using ``setuptools``: ::
 
-     python3 setup.py install
+     git clone https://github.com/munircontractor/raspberry-pi-device-library
+     cd raspberry-pi-device-library
+     sudo python3 setup.py install
 
 2. Then, in your code: ::
 
