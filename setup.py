@@ -16,14 +16,18 @@ setup(
     author_email='munircontractor@gmail.com',
     url='https://github.com/munircontractor/raspberry-pi-device-library',
     keywords=['raspberrypi', 'GPIO'],
-    packages=find_packages(exclude=['docs'])
+    packages=find_packages(exclude=['docs']),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
         'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)',
+        'Topic :: Scientific/Engineering',
+        'Topic :: Software Development :: Embedded Systems',
     ],
-    license='LGPL',
+    license='LGPLv3',
     install_requires=['RPi.GPIO'],
 )

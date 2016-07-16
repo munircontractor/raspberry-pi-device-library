@@ -5,6 +5,8 @@ from time import sleep
 Each device comes with a few common methods to control the device.
 """
 
+__all__ = ['cleanup', 'DCMotor', 'SimpleMotor', 'Servo', 'LED']
+
 def cleanup():
     """Same as RPi.GPIO.cleanup()"""
     GPIO.cleanup()
