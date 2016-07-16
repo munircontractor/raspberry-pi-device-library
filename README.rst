@@ -20,13 +20,11 @@ Installation and Usage
 Option 1:
 ^^^^^^^^^
 
-Using ``pip``:
+Using ``pip``: ::
+  pip install rpi_devices
 
-    pip install rpi_devices
-
-Then, in your code:
-
-    from rpi_devices import <Device>
+Then, in your code: ::
+  from rpi_devices import <Device>
 
 Option 2:
 ^^^^^^^^^
@@ -34,17 +32,17 @@ Option 2:
 Using 
 
 1. Copy the ``rpi_devices/devices.py`` files to your Raspberry Pi.
-2. To use the objects, add the following lines at the top of your code:
-       import sys
-       sys.path.append("/full/path/to/devices.py")
-       from devices import cleanup, <Device>
-3. Use and enjoy
+2. To use the objects, add the following lines at the top of your code: ::
+   import sys
+   sys.path.append("/full/path/to/devices.py")
+   from devices import cleanup, <Device>
+3. Use and enjoy.
 
 Cautions
 --------
 
 1. Do not forget to run the library’s ``cleanup`` function or 
-``RPi.GPIO.cleanup()`` after you are done.
+   ``RPi.GPIO.cleanup()`` after you are done.
 2. Although all the classes in this library allow a different pin numbering
 mode during setup, it is strongly recommended to use the same mode
 across all devices. The pin numbering mode is set globally, so if
