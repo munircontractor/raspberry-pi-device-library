@@ -30,7 +30,7 @@ class DCMotor(object):
             mode: GPIO pin numbering mode, RPi.GPIO.BCM or RPi.GPIO.BOARD (default)
 
         Raises:
-            ValueError: If mode is not RPi.GPIO.BCM or RPi.GPIO.BOARD
+            ValueError: If ``mode`` is not RPi.GPIO.BCM or RPi.GPIO.BOARD
         """
 
         if mode == GPIO.BOARD or mode == GPIO.BCM:
@@ -102,7 +102,7 @@ class DCMotor(object):
             dc: Duty cycle to change to
 
         Raises:
-            ValueError: 0 <= dc <= 100 is not True
+            ValueError: ``0 <= dc <= 100`` is not ``True``
         """
 
         if (0 <= dc <= 100):
@@ -152,7 +152,8 @@ class Servo(object):
             upper: Upper limit on the position of servo in degrees (default: 360)
 
         Raises:
-            ValueError: If mode is not RPi.GPIO.BCM or RPi.GPIO.BOARD or lower and upper values don't make sense
+            ValueError: If ``mode`` is not RPi.GPIO.BCM or RPi.GPIO.BOARD
+            ValueError: If ``lower`` and ``upper`` values don't make sense
         """
 
         if mode == GPIO.BCM or mode == GPIO.BOARD:
@@ -181,7 +182,7 @@ class Servo(object):
             d180: New 180 degree position duty cycle
 
         Raises:
-            ValueError: If d180 < d0 or either value is negative or zero
+            ValueError: If ``d180 < d0`` or either value is negative or zero
         """
 
         if (d180 > d0 > 0):
@@ -233,7 +234,7 @@ class Servo(object):
             upper: Upper limit on the position of servo in degrees 
 
         Raises:
-            ValueError: If lower and upper values don't make sense
+            ValueError: If ``lower`` and ``upper`` values don't make sense
         """
 
         if (0 <= lower <= upper <= 360):
@@ -298,7 +299,7 @@ class SimpleMotor(object):
             mode: GPIO pin numbering mode, RPi.GPIO.BCM or RPi.GPIO.BOARD (default)
 
         Raises:
-            ValueError: If mode is not RPi.GPIO.BCM or RPi.GPIO.BOARD
+            ValueError: If ``mode`` is not RPi.GPIO.BCM or RPi.GPIO.BOARD
         """
 
         if mode == GPIO.BOARD or mode == GPIO.BCM:

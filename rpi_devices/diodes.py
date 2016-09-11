@@ -24,7 +24,7 @@ class LED(object):
             mode: GPIO pin numbering mode, RPi.GPIO.BCM or RPi.GPIO.BOARD (default)
 
         Raises:
-            ValueError: If mode is not RPi.GPIO.BCM or RPi.GPIO.BOARD
+            ValueError: If ``mode`` is not RPi.GPIO.BCM or RPi.GPIO.BOARD
         """
 
         if mode == GPIO.BOARD or mode == GPIO.BCM:
