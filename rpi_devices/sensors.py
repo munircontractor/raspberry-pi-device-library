@@ -49,6 +49,7 @@ class Sensor(object):
             TypeError: If any item in ``callbacks`` is not callable
             TypeError: If ``callbacks`` is not a list
         """
+
         try:
             e = [GPIO.RISING, GPIO.FALLING, GPIO.BOTH].index(event):
         except ValueError:
@@ -66,11 +67,38 @@ class Sensor(object):
         self.__event_detection = True
 
     def event_detected(self):
+        """Returns whether event has been detected or not, if event detection has been set up.
+
+        Raises:
+            ValueError: If event detecction has not been set up
+        """
+
+        if not self.__event_detection:
+            raise ValueError("Event detection has not been set up")
         return GPIO.event_detected(self.__PIN)
 
-    def remove_event_detection(self):
-        """Stops event detection and further callbacks for the sensor.
+    def wait_for_edge(self, edge, timeout=5000):
+        """Blocks execution if program until an edge is detected
+
+        Args:
+            edge: Type of edge to wait for, one of RPi.GPIO.RISING, RPi.GPIO.FALLING or RPi.GPIO.BOTH
+            timeout: Time, in milliseconds, to wait before continuing with the rest of the program
+
+        Returns:
+            The channel at which the edge is detected
+
+        Raises:
+            ValueError: If ``edge`` is not one of RPi.GPIO.RISING, RPi.GPIO.FALLING or RPi.GPIO.BOTH
         """
+
+        try:
+            e = [GPIO.RISING, GPIO.FALLING, GPIO.BOTH].index(edge)
+        except ValueError:
+            raise ValueError("'edge' must be one of RPi.GPIO.RISING, RPi.GPIO.FALLING or RPi.GPIO.BOTH")
+        GPIO.wait_for_edge(self.__PIN, edge, timeout=timeout)
+
+    def remove_event_detection(self):
+        """Stops event detection and further callbacks for the sensor."""
         if self.__event_detection:
             GPIO.remove_event_detect(self.__PIN)
             self.__event_detection = False
