@@ -71,7 +71,7 @@ class LED(object):
             self.flash(duration = duration)
             sleep(interval)
 
-    def get_settings():
+    def get_settings(self):
         """Returns a dictionary of the pin and mode of the LED
 
         Dictionary contains the following keys:

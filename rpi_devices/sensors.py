@@ -14,6 +14,8 @@ class Sensor(object):
 
     __PIN = -1
     __mode = GPIO.BOARD
+    __callbacks = []
+    __event = -1
     __event_detection = False
     
     def __init__(self, pin, mode=GPIO.BOARD):
@@ -48,7 +50,7 @@ class Sensor(object):
             TypeError: If ``callbacks`` is not a list
         """
         try:
-            [GPIO.RISING, GPIO.FALLING, GPIO.BOTH].index(event):
+            e = [GPIO.RISING, GPIO.FALLING, GPIO.BOTH].index(event):
         except ValueError:
             raise ValueError("'event' must be one of RPi.GPIO.RISING, RPi.GPIO.FALLING or RPi.GPIO.BOTH")
         if not type(callbacks) == list:
@@ -57,8 +59,10 @@ class Sensor(object):
             if not callable(callback):
                 raise TypeError("All items in 'callbacks' must be callable")
         GPIO.add_event_detect(self.__PIN, event)
+        self.__event = ['RISING', 'FALLING', 'BOTH'][e]
         for callback in callbacks:
             GPIO.add_event_callback(self.__PIN, callback, bouncetime=bouncetime)
+            self.__callbacks.append(callback)
         self.__event_detection = True
 
     def event_detected(self):
@@ -70,3 +74,17 @@ class Sensor(object):
         if self.__event_detection:
             GPIO.remove_event_detect(self.__PIN)
             self.__event_detection = False
+            self.__callbacks = []
+
+    def get_settings(self):
+        """Returns a dictionary of the pin, mode, event detection and callbacks of the sensor
+
+        Dictionary contains the following keys:
+          MODE: Mode being used by the sensor as string
+          P: GPIO pin connected to the sensor
+          EVENT: Event being listened for
+          CALLBACKS: List of callbacks in the order they are called after an event is detected
+        """
+
+        return {'MODE': 'BOARD' if __mode == GPIO.BOARD else 'BCM', 'P': __PIN,
+            'EVENT': __event, 'CALLBACKS': __callbacks}
